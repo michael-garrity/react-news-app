@@ -12,9 +12,9 @@ export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    console.log('count', count);
     getStoryIds().then(data => setStoryIds(data));
-  }, [count]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <Fragment>

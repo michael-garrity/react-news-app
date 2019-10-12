@@ -7,7 +7,7 @@ import {
   StoryMetaElement
 } from '../styles/StoryStyles';
 import { mapTime } from '../mappers/mapTime';
-export const Story = ({ storyId }) => {
+export const Story = memo(function Story({ storyId }) {
   const [story, setStory] = useState({});
   useEffect(() => {
     getStory(storyId).then(data => data && data.url && setStory(data));
@@ -29,4 +29,4 @@ export const Story = ({ storyId }) => {
       </StoryMeta>
     </StoryWrapper>
   ) : null;
-};
+});
